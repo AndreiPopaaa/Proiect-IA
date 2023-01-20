@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+</head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Button</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            box-sizing: border-box;
+            background: #9e0909;
+            font-family: 'helvetica neue';
+            font-size: 20px;
+            font-weight: 200;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .article {
+            max-width: 700px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            text-align: justify;
+        }
+
+        .align-left {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .align-right {
+            float: right;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:5500/backend/home.html">StartPage</a>
+    </nav>
+    <div class="article">
+        <h1>Minimax</h1>
+        <article>
+
+
+
+            <p>Acest articol se referă la conceptul din teoria jocurilor. Pentru alte sensuri, vedeți Minimax
+                (dezambiguizare).
+                Minimax (numit uneori minmax) este o regulă de decizie utilizată în teoria jocurilor, statistică și
+                filosofie și
+                care constă în minimizarea pierderii maxime posibile. Alternativ, abordarea poate fi și cea a
+                maximizării
+                câștigului minim (maximin). A început din teoria jocului cu sumă zero cu doi jucători, acoperind atât
+                cazurile
+                în care jucătorii fac mutări alternativ și cele în care fac mutări simultan. Regula a fost extinsă și la
+                jocuri
+                mai complexe și la procese generale de luare a deciziilor în condiții de incertitudine.</p>
+
+            <h4>Teoria jocurilor</h4>
+            <p>În teoria jocurilor simultane, o strategie minimax este o strategie mixtă care face parte din soluția
+                unui
+                joc
+                cu sumă zero. În jocurile cu sumă zero, soluția minimax este aceeași cu echilibrul Nash.</p>
+
+            <h4> Teorema Minimax </h4>
+            <p>Teorema minimax afirmă că:
+
+                Oricare ar fi jocul cu sumă zero cu strategii finite și doi jucători, există o valoare V și o strategie
+                mixtă
+                pentru fiecare jucător, astfel încât (a) Dată fiind strategia lui 2, câștigul lui 1 este V, și (b) Dată
+                fiind
+                strategia lui 1, câștigul lui 2 este -V.
+                Echivalent, strategia jucătorului 1 îi garantează un câștig de V indiferent de strategia jucătorului 2,
+                și
+                în
+                același timp jucătorul 2 își poate garanta un câștig de -V. Numele de minimax apare deoarece fiecare
+                jucător
+                încearcă, la fiecare pas, să minimizeze câștigul maxim al celuilalt — deoarece jocul este cu sumă zero,
+                își
+                maximizează astfel propriul câștig minim.
+
+                Această teoremă a fost enunțată de John von Neumann[1], care a afirmat: "Din câte pot vedea, nu poate să
+                existe
+                o teorie a jocurilor … fără acea teoremă … am considerat că nimic nu merita publicat până când nu a fost
+                demonstrată teorema minimax".[2]</p>
+
+            <p>
+            <h6>Exemplu</h6>
+            B alege B1 B alege B2 B alege B3
+            A alege A1 +3 -2 +2
+            A alege A2 -1 0 +4
+            A alege A3 -4 -3 +1
+            Următorul exemplu de joc cu sumă zero, în care A și B mută simultan, ilustrează soluțiile minimax. Se
+            presupune
+            că fiecare jucător are la dispoziție trei variante, și se consideră matricea câștigurilor A afișată la
+            dreapta.
+            Se presupune că matricea câștigurilor lui B este aceeași matrice, cu semnele schimbate. Atunci, alegerea
+            minimax
+            pentru A este A2 deoarece cel mai prost rezultat posibil este să piardă 1, în timp ce alegerea minimax
+            pentru B
+            este B2 deoarece cel mai slab rezultat pe care îl poate obține este 0. Totuși, această soluție nu este
+            stabilă,
+            deoarece dacă B crede că A va alege A2, atunci B va alege B1 pentru a câștiga 1; apoi dacă A crede că B
+            va
+            alege
+            B1 atunci A va alege A1 pentru a câștiga 3; apoi B va alege B2; și în cele din urmă ambii jucători vor
+            realiza
+            dificultatea deciziei, deci este necesară o strategie mai stabilă.
+
+            Unele variante sunt dominate de altele și pot fi eliminate: A nu va alege A3 deoarece și A1 și A2 produc
+            rezultate mai bune, indiferent de ce alege B; B nu va alege B3 deoarece B2 va produce un rezultat mai
+            bun,
+            indiferent ce alege A.
+
+            A poate evita o pierdere așteptată de peste 1/3 alegând A1 cu probabilitatea 1/6 și A2 cu probabilitatea
+            5/6,
+            indiferent ce alege B. B poate asigura un câștig așteptat de cel puțin 1/3 folosind o strategie
+            aleatoare de
+            alegere, cu B1 cu probabilitatea 1/3 și B2 cu probabilitatea 2/3, indiferent ce alege A. Aceste
+            strategii
+            minimax mixte sunt stabile și nu mai pot fi îmbunătățite.</p>
+
+            <h4>Note</h4>
+            ^ Von Neumann, J: Zur theorie der gesellschaftsspiele Math. Annalen. 100 (1928) 295-320
+            ^ John L Casti (1996). Five golden rules: great theories of 20th-century mathematics – and why they matter.
+            New
+            York: Wiley-Interscience. p. p. 19. ISBN 0-471-00261-5.
+            Gnome-fs-client.svg Acest articol din domeniul informaticii este deocamdată un ciot. Puteți ajuta Wikipedia
+            prin
+            dezvoltarea lui.
+
+        </article>
+    </div>
+</body>
